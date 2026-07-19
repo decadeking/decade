@@ -1,0 +1,59 @@
+# Code Shine — example project config
+#
+# Copy this file to your project root as .code-shine.yaml and edit.
+# All settings are optional — omit the file for default behavior.
+
+version: 1
+
+# strictness: strict | balanced (default) | legacy-friendly
+#
+# - strict:           -20 / -8 / -2 (Critical / Warning / Suggestion)
+# - balanced:         -15 / -5 / -1
+# - legacy-friendly:  -8 / -3 / -1 (and Summary leads with the top 3 fixes)
+strictness: balanced
+
+# Restrict analysis to a subset of supported languages.
+# When omitted, the tool auto-detects from file extensions.
+# Supported: python, typescript, javascript, go, rust, java, kotlin, scala,
+#            c, cpp, csharp, ruby, php, swift, dart, elixir, erlang, haskell,
+#            clojure, fsharp, ocaml, r, julia, matlab, lua, perl, sql, zig
+# languages: [python, typescript, go, rust]
+
+# Skip these risk codes entirely. Their findings are omitted from the report
+# and they do not affect the Health Score.
+# disable:
+#   - T5   # coverage metrics — we don't enforce coverage gates
+#   - T6   # pyramid ratio — we know our distribution is non-standard
+
+# Override the severity of a specific risk for this project.
+# Valid values: critical | warning | suggestion
+# severity:
+#   R1: suggestion   # tolerate the occasional long method during refactoring
+
+# Exclude files matching any of these glob patterns.
+ignore:
+  - "**/*.generated.*"
+  - "**/vendor/**"
+  - "**/migrations/**"
+  - "**/*.min.js"
+
+# Optional: define project-specific risk codes (C1, C2, ...).
+# See skills/_shared/custom-risks-guide.md for the full schema and examples.
+# custom_risks:
+#   C1:
+#     name: Security Debt
+#     question: "Are there known security vulnerabilities being deferred?"
+#     symptoms:
+#       - "Hardcoded credentials or API keys"
+#       - "Missing input validation on user-facing endpoints"
+#     severity:
+#       critical: "Exploitable vulnerability in production"
+#       warning: "Known vulnerability with mitigating controls"
+#       suggestion: "Best-practice deviation with no current exposure"
+
+# Optional: downgrade specific findings (per the Post-Report Triage workflow).
+# suppress:
+#   - risk: R1
+#     pattern: "legacy/parser.py"
+#     reason: "Accepted — scheduled for rewrite in Q3"
+#     expires: "2026-12-31"

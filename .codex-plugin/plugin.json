@@ -1,0 +1,29 @@
+{
+  "name": "code-shine",
+  "version": "1.0.0",
+  "description": "Multi-language code review and quality analysis skill for Codex CLI — supports 20+ languages with six quality dimensions (PR review, architecture audit, tech debt, test quality, health dashboard, full sweep)",
+  "license": "MIT",
+  "keywords": [
+    "codex",
+    "codex-skill",
+    "code-review",
+    "code-quality",
+    "multi-language",
+    "tech-debt",
+    "architecture",
+    "static-analysis",
+    "openai"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Code Shine",
+    "shortDescription": "Multi-language code quality analysis — 20+ languages, six quality dimensions",
+    "longDescription": "Code Shine is a Codex CLI skill that diagnoses code quality across six dimensions: Cognitive Overload, Change Propagation, Knowledge Duplication, Accidental Complexity, Dependency Disorder, and Domain Model Distortion. It supports 20+ programming languages and produces structured Symptom → Source → Consequence → Remedy findings with severity labels and a 0–100 Health Score. Six analysis modes: PR review, architecture audit, tech debt, test quality, health dashboard, full sweep.",
+    "category": "Coding",
+    "capabilities": [
+      "Interactive"
+    ],
+    "composerIcon": "./assets/logo.svg",
+    "logo": "./assets/logo.svg"
+  }
+}

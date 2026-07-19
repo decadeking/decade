@@ -1,0 +1,19 @@
+{
+  "name": "code-shine",
+  "version": "1.0.0",
+  "description": "Multi-language code review and quality analysis tool — 20+ languages, six quality dimensions, structured Symptom → Source → Consequence → Remedy findings",
+  "type": "module",
+  "scripts": {
+    "validate": "node scripts/validate-repo.mjs",
+    "test": "node scripts/validate-repo.test.mjs",
+    "evals": "node scripts/run-evals.mjs",
+    "evals:live": "node scripts/run-evals-live.mjs",
+    "history": "node scripts/history.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "openai": "^4.55.0"
+  }
+}

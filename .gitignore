@@ -1,0 +1,23 @@
+# Build artifacts
+node_modules/
+dist/
+build/
+*.log
+*.lock
+
+# Local environment
+.env
+.env.local
+.env.*.local
+.idea/
+.vscode/
+.DS_Store
+
+# History / cache (runtime, not source)
+.code-shine-history.json
+.openai-cache/
+.codex-cache/
+
+# Eval / benchmark scratch
+evals/evals.local.json
+evals/runs/

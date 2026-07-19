@@ -1,0 +1,9 @@
+复制整个skill文件，到codex全局技能目录
+mkdir -Force $env:USERPROFILE\.codex\skills
+Copy-Item -Path .\skills\* -Destination $env:USERPROFILE\.codex\skills\ -Recurse -Force
+
+#    macOS / Linux
+mkdir -p ~/.codex/skills
+cp -r ./skills/* ~/.codex/skills/
+
+进入你要分析的项目目录，启动 Codex，直接用自然语言说：帮我检查代码等指令  
